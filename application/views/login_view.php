@@ -70,14 +70,16 @@
             <!-- /Logo -->
 
             <div class="card-body mt-2">
-              <form id="formAuthentication" class="mb-3" action="index.html" method="POST">
+              <form id="formAuthentication" class="mb-3" method="POST">
                 <div class="form-floating form-floating-outline mb-3">
                   <input
                     type="text"
                     class="form-control"
                     id="email"
-                    name="email-username"
+                    name="username"
                     placeholder="Ingresar su usuario"
+                    required="true"
+                    autocomplete="off"
                     autofocus />
                   <label for="email">Usuario</label>
                 </div>
@@ -90,7 +92,9 @@
                           id="password"
                           class="form-control"
                           name="password"
-                          placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
+                          placeholder="Ingresar contraseña"
+                          required="true"
+                          autocomplete="off"
                           aria-describedby="password" />
                         <label for="password">Contraseña</label>
                       </div>
@@ -98,7 +102,7 @@
                   </div>
                 </div>
                 <div class="mb-3">
-                  <button class="btn btn-primary d-grid w-100" type="submit">ENTRAR</button>
+                  <button class="btn btn-primary d-grid w-100" name="login" type="submit">ENTRAR</button>
                 </div>
               </form>
             </div>

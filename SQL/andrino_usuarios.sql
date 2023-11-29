@@ -39,7 +39,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'Edwin Orellana',NULL,'educsis@gmail.com','d033e22ae348aeb5660fc2140aec35850c4da997',1);
+INSERT INTO `usuarios` VALUES (1,'Edwin Orellana','admin','educsis@gmail.com','d033e22ae348aeb5660fc2140aec35850c4da997',1);
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-11-28 22:52:43
+-- Dump completed on 2023-11-28 23:41:32
