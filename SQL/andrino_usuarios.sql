@@ -25,6 +25,7 @@ DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE `usuarios` (
   `idusuarios` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(45) DEFAULT NULL,
+  `usuario` varchar(45) DEFAULT NULL,
   `email` varchar(45) DEFAULT NULL,
   `clave` varchar(45) DEFAULT NULL,
   `status` int DEFAULT '1',
@@ -38,7 +39,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'Edwin Orellana','educsis@gmail.com',NULL,1);
+INSERT INTO `usuarios` VALUES (1,'Edwin Orellana',NULL,'educsis@gmail.com',NULL,1);
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-11-28 22:35:20
+-- Dump completed on 2023-11-28 22:48:04
