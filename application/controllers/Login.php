@@ -7,6 +7,13 @@ class Login extends CI_Controller {
   	{
 		parent::__construct();
     	session_start();
+
+		if(isset($_SESSION['logged'])){
+			// echo $_SESSION['logged'];
+			// print_r($_SESSION);
+			// die('not set');
+        	redirect(base_url());
+   		}
   	}
 
 	public function index()
