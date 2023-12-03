@@ -1,144 +1,78 @@
-<!DOCTYPE html>
-
-<html
-  lang="en"
-  class="light-style customizer-hide"
-  dir="ltr"
-  data-theme="theme-default"
-  data-assets-path="<?= base_url() ?>"
-  data-template="horizontal-menu-template-no-customizer">
+<!doctype html>
+<!--
+* Tabler - Premium and Open Source dashboard template with responsive and high quality UI.
+* @version 1.0.0-beta19
+* @link https://tabler.io
+* Copyright 2018-2023 The Tabler Authors
+* Copyright 2018-2023 codecalm.net Paweł Kuna
+* Licensed under MIT (https://github.com/tabler/tabler/blob/master/LICENSE)
+-->
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
-
-    <title>Login Basic - Pages | Materialize - Material Design HTML Admin Template</title>
-
-    <meta name="description" content="" />
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="<?= base_url('assets/img/favicon/favicon.ico') ?>" />
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet" />
-
-    <!-- Icons -->
-    <link rel="stylesheet" href="<?= base_url('assets/vendor/fonts/materialdesignicons.css') ?>" />
-    <link rel="stylesheet" href="<?= base_url('assets/vendor/fonts/fontawesome.css') ?>" />
-
-    <!-- Core CSS -->
-    <link rel="stylesheet" href="<?= base_url('assets/vendor/css/rtl/core.css') ?>" />
-    <link rel="stylesheet" href="<?= base_url('assets/vendor/css/rtl/theme-raspberry.css') ?>" />
-    <link rel="stylesheet" href="<?= base_url('assets/css/demo.css') ?>" />
-
-    <!-- Vendors CSS -->
-    <link rel="stylesheet" href="<?= base_url('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') ?>" />
-    <link rel="stylesheet" href="<?= base_url('assets/vendor/libs/node-waves/node-waves.css') ?>" />
-    <link rel="stylesheet" href="<?= base_url('assets/vendor/libs/typeahead-js/typeahead.css') ?>" />
-    <!-- Vendor -->
-    <link rel="stylesheet" href="<?= base_url('assets/vendor/libs/formvalidation/dist/css/formValidation.min.css') ?>" />
-
-    <!-- Page CSS -->
-    <!-- Page -->
-    <link rel="stylesheet" href="<?= base_url('assets/vendor/css/pages/page-auth.css') ?>" />
-    <link rel="stylesheet" href="<?= base_url('assets/css/login.css') ?>" />
-    <!-- Helpers -->
-    <script src="<?= base_url('assets/vendor/js/helpers.js') ?>"></script>
-
-    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
-    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-    <script src="<?= base_url('assets/js/config.js') ?>"></script>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Andrido .::. Login</title>
+    <!-- CSS files -->
+    <link href="<?= base_url('dist/css/tabler.min.css?1684106062') ?>" rel="stylesheet"/>
+    <link href="<?= base_url('dist/css/tabler-flags.min.css?1684106062') ?>" rel="stylesheet"/>
+    <link href="<?= base_url('dist/css/tabler-payments.min.css?1684106062') ?>" rel="stylesheet"/>
+    <link href="<?= base_url('dist/css/tabler-vendors.min.css?1684106062') ?>" rel="stylesheet"/>
+    <link href="<?= base_url('dist/css/demo.min.css?1684106062') ?>" rel="stylesheet"/>
+    <style>
+      @import url('https://rsms.me/inter/inter.css');
+      :root {
+      	--tblr-font-sans-serif: 'Inter Var', -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI, Roboto, Helvetica Neue, sans-serif;
+      }
+      body {
+      	font-feature-settings: "cv03", "cv04", "cv11";
+      }
+    </style>
   </head>
-
-  <body>
-    <!-- Content -->
-
-    <div class="position-relative wrapper">
-      <div class="authentication-wrapper authentication-basic container-p-y">
-        <div class="authentication-inner py-4">
-          <!-- Login -->
-          <div class="card p-2">
-            <!-- Logo -->
-            <div class="app-brand justify-content-center mt-5">
-              <img src="<?= base_url('assets/img/logo.svg') ?>" alt="logo" style="width: 300px;">
-            </div>
-            <!-- /Logo -->
-
-            <div class="card-body mt-2">
-              <form id="formAuthentication" class="mb-3" method="POST">
-                <div class="form-floating form-floating-outline mb-3">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="email"
-                    name="username"
-                    placeholder="Ingresar su usuario"
-                    required="true"
-                    autocomplete="off"
-                    autofocus />
-                  <label for="email">Usuario</label>
-                </div>
-                <div class="mb-3">
-                  <div class="form-password-toggle">
-                    <div class="input-group input-group-merge">
-                      <div class="form-floating form-floating-outline">
-                        <input
-                          type="password"
-                          id="password"
-                          class="form-control"
-                          name="password"
-                          placeholder="Ingresar contraseña"
-                          required="true"
-                          autocomplete="off"
-                          aria-describedby="password" />
-                        <label for="password">Contraseña</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="mb-3">
-                  <button class="btn btn-primary d-grid w-100" name="login" type="submit">ENTRAR</button>
-                </div>
-              </form>
-            </div>
+  <body  class=" d-flex flex-column bg-white">
+    <script src="<?= base_url('dist/js/demo-theme.min.js?1684106062') ?>"></script>
+    <div class="row g-0 flex-fill">
+      <div class="col-12 col-lg-6 col-xl-4 border-top-wide border-red d-flex flex-column justify-content-center">
+        <div class="container container-tight my-5 px-lg-5">
+          <div class="text-center mb-4">
+            <a href="." class="navbar-brand navbar-brand-autodark"><img src="<?= base_url('static/logo.svg') ?>" height="70" alt=""></a>
           </div>
-          <!-- /Login -->
-         
+          <form method="POST" autocomplete="off" novalidate>
+            <?php
+            if($msg == 'error') {
+            ?>
+            <div class="alert alert-danger" role="alert">
+                Hay un error en su usuario o contraseña.
+            </div>
+            <?php
+            }
+            ?>
+            <div class="mb-3">
+              <label class="form-label">Usuario</label>
+              <input name="username" type="text" class="form-control" placeholder="Ingresar Usuario" autocomplete="off" required="true">
+            </div>
+            <div class="mb-2">
+              <label class="form-label">
+                Contraseña
+              </label>
+              <div class="input-group input-group-flat">
+                <input name="password" type="password" class="form-control"  placeholder="Ingresar Contraseña"  autocomplete="off">
+              </div>
+            </div>
+            <div class="form-footer">
+              <button type="submit" name="login" class="btn btn-primary w-100 bg-red text-red-fg">Ingresar</button>
+            </div>
+          </form>
         </div>
       </div>
+      <div class="col-12 col-lg-6 col-xl-8 d-none d-lg-block">
+        <!-- Photo -->
+        <div class="bg-cover h-100 min-vh-100" style="background-image: url('<?= base_url('static/photos/blood.png') ?>')"></div>
+      </div>
     </div>
-
-    <!-- / Content -->
-
-    <!-- Core JS -->
-    <!-- build:js assets/vendor/js/core.js -->
-    <script src="<?= base_url('assets/vendor/libs/jquery/jquery.js') ?>"></script>
-    <script src="<?= base_url('assets/vendor/libs/popper/popper.js') ?>"></script>
-    <script src="<?= base_url('assets/vendor/js/bootstrap.js') ?>"></script>
-    <script src="<?= base_url('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js') ?>"></script>
-    <script src="<?= base_url('assets/vendor/libs/node-waves/node-waves.jsv') ?>"></script>
-
-    <script src="<?= base_url('assets/vendor/libs/hammer/hammer.js') ?>"></script>
-    <script src="<?= base_url('assets/vendor/libs/i18n/i18n.js') ?>"></script>
-    <script src="<?= base_url('assets/vendor/libs/typeahead-js/typeahead.js') ?>"></script>
-
-    <script src="<?= base_url('assets/vendor/js/menu.js') ?>"></script>
-    <!-- endbuild -->
-
-    <!-- Vendors JS -->
-    <script src="<?= base_url('assets/vendor/libs/formvalidation/dist/js/FormValidation.min.jsv') ?>"></script>
-    <script src="<?= base_url('assets/vendor/libs/formvalidation/dist/js/plugins/Bootstrap5.min.js') ?>"></script>
-    <script src="<?= base_url('assets/vendor/libs/formvalidation/dist/js/plugins/AutoFocus.min.js') ?>"></script>
-
-    <!-- Main JS -->
-    <script src="<?= base_url('assets/js/main.js') ?>"></script>
-
-    <!-- Page JS -->
-    <script src="<?= base_url('assets/js/pages-auth.js') ?>"></script>
+    <!-- Libs JS -->
+    <!-- Tabler Core -->
+    <script src="<?= base_url('dist/js/tabler.min.js?1684106062') ?>" defer></script>
+    <!-- <script src="./dist/js/demo.min.js?1684106062" defer></script> -->
   </body>
 </html>

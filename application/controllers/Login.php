@@ -18,6 +18,8 @@ class Login extends CI_Controller {
 
 	public function index()
 	{
+		$d['msg'] = '';
+
 		if(isset($_POST['login'])){
 			$username = $_POST['username'];
 			$password = sha1($_POST['password']);
@@ -36,9 +38,9 @@ class Login extends CI_Controller {
 
 				redirect(base_url('admin/dashboard'));
 			}else{
-
+				$d['msg'] = 'error';
 			}
 		}
-		$this->load->view('login_view');
+		$this->load->view('login_view', $d);
 	}
 }

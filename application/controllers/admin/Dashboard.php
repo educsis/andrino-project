@@ -20,9 +20,9 @@ class Dashboard extends CI_Controller {
 	{
         $dh['titulo'] = 'Inicio';
 
-        $this->load->view('admin/header_view', $dh);
+        // $this->load->view('admin/header_view', $dh);
 		$this->load->view('admin/dashboard_view');
-        $this->load->view('admin/footer_view', $dh);
+        // $this->load->view('admin/footer_view', $dh);
 	}
 
 	public function logout()
