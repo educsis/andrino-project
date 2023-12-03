@@ -7,27 +7,27 @@
             <div class="row mb-4">
                 <div class="col-2">
                     <label class="form-label">Peso Lb.</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" name="peso" autocomplete="off" required="true">
                 </div>
                 <div class="col-2">
                     <label class="form-label">Temperatura °C</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" name="temp" autocomplete="off" required="true">
                 </div>
                 <div class="col-2">
                     <label class="form-label">Presión Arterial</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" name="presion" autocomplete="off" required="true">
                 </div>
                 <div class="col-2">
                     <label class="form-label">Pulso</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" name="pulso" autocomplete="off" required="true">
                 </div>
                 <div class="col-2">
-                    <label class="form-label">hemoglobina</label>
-                    <input type="text" class="form-control">
+                    <label class="form-label">Hemoglobina</label>
+                    <input type="text" class="form-control" name="hemoglobina" autocomplete="off" required="true">
                 </div>
-                <div class="col-2">
-                    <label class="form-label">Hematrocito</label>
-                    <input type="text" class="form-control">
+                <div class="col-2" style="text-align: right;">
+                    <label class="form-label text-white">a</label>
+                    <button type"submit" name="guardar" class="btn btn-success">Guardar</button>
                 </div>
             </div>
         </div>

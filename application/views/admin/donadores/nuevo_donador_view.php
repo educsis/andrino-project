@@ -12,8 +12,11 @@
 <div class="page-body">
   <div class="container-xl">
     <div class="row row-cards">
-      <?= $this->load->view('admin/donadores/datos_generales_view', '', TRUE) ?>
-      <?= $this->load->view('admin/donadores/examen_fisico_view', '', TRUE) ?>
+      <form method="POST">
+        <?= $this->load->view('admin/donadores/datos_generales_view', '', TRUE) ?>
+        <br>
+        <?= $this->load->view('admin/donadores/examen_fisico_view', '', TRUE) ?>
+      </form>
     </div>
   </div>
 </div>
