@@ -1,179 +1,149 @@
-<!DOCTYPE html>
-
-<html
-  lang="en"
-  class="light-style layout-menu-fixed"
-  dir="ltr"
-  data-theme="theme-default"
-  data-assets-path="<?= base_url() ?>"
-  data-template="horizontal-menu-template-starter">
+<!doctype html>
+<!--
+* Tabler - Premium and Open Source dashboard template with responsive and high quality UI.
+* @version 1.0.0-beta19
+* @link https://tabler.io
+* Copyright 2018-2023 The Tabler Authors
+* Copyright 2018-2023 codecalm.net Paweł Kuna
+* Licensed under MIT (https://github.com/tabler/tabler/blob/master/LICENSE)
+-->
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
-
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <link rel="icon" href="<?= base_url('static/favicon/favicon.io') ?>">
     <title>Banco de Sangre Andrino .::. <?= $titulo ?></title>
-
-    <meta name="description" content="" />
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="<?= base_url('assets/img/favicon/favicon.ico') ?>" />
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet" />
-
-    <!-- Icons. Uncomment required icon fonts -->
-    <link rel="stylesheet" href="<?= base_url('assets/vendor/fonts/materialdesignicons.css') ?>" />
-    <link rel="stylesheet" href="<?= base_url('assets/vendor/fonts/fontawesome.css') ?>" />
-
-    <!-- Core CSS -->
-    <link rel="stylesheet" href="<?= base_url('assets/vendor/css/rtl/core.css') ?>" />
-    <link rel="stylesheet" href="<?= base_url('assets/vendor/css/rtl/theme-raspberry.css') ?>" />
-    <link rel="stylesheet" href="<?= base_url('assets/css/demo.css') ?>" />
-
-    <!-- Vendors CSS -->
-    <link rel="stylesheet" href="<?= base_url('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') ?>" />
-    <link rel="stylesheet" href="<?= base_url('assets/vendor/libs/node-waves/node-waves.css') ?>" />
-    <link rel="stylesheet" href="<?= base_url('assets/vendor/libs/typeahead-js/typeahead.css') ?>" />
-    <link rel="stylesheet" href="<?= base_url('assets/vendor/libs/bs-stepper/bs-stepper.css') ?>" />
-    <link rel="stylesheet" href="<?= base_url('assets/vendor/libs/bootstrap-select/bootstrap-select.css') ?>" />
-    <link rel="stylesheet" href="<?= base_url('assets/vendor/libs/select2/select2.css') ?>" />
-    <link rel="stylesheet" href="<?= base_url('assets/vendor/libs/formvalidation/dist/css/formValidation.min.css') ?>" />
-    <link rel="stylesheet" href="<?= base_url('assets/vendor/libs/flatpickr/flatpickr.css') ?>" />
-    <link rel="stylesheet" href="<?= base_url('assets/vendor/libs/bootstrap-datepicker/bootstrap-datepicker.css') ?>" />
-    <link rel="stylesheet" href="<?= base_url('assets/vendor/libs/bootstrap-daterangepicker/bootstrap-daterangepicker.css') ?>" />
-    <link rel="stylesheet" href="<?= base_url('assets/vendor/libs/jquery-timepicker/jquery-timepicker.css') ?>" />
-    <link rel="stylesheet" href="<?= base_url('assets/vendor/libs/pickr/pickr-themes.css') ?>" />
-
-    <!-- Page CSS -->
-
-    <!-- Helpers -->
-    <script src="<?= base_url('assets/vendor/js/helpers.js') ?>"></script>
-
-    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
-    <!--? Template customizer: To hide customizer set displayCustomizer value false in config.js.  -->
-    <script src="<?= base_url('assets/vendor/js/template-customizer.js') ?>"></script>
-    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-    <script src="<?= base_url('assets/js/config.js') ?>"></script>
+    <!-- CSS files -->
+    <link href="<?= base_url('dist/css/tabler.min.css?1684106062') ?>" rel="stylesheet"/>
+    <link href="<?= base_url('dist/css/tabler-flags.min.css?1684106062') ?>" rel="stylesheet"/>
+    <link href="<?= base_url('dist/css/tabler-payments.min.css?1684106062') ?>" rel="stylesheet"/>
+    <link href="<?= base_url('dist/css/tabler-vendors.min.css?1684106062') ?>" rel="stylesheet"/>
+    <link href="<?= base_url('dist/css/demo.min.css?1684106062') ?>" rel="stylesheet"/>
+    <style>
+      @import url('https://rsms.me/inter/inter.css');
+      :root {
+      	--tblr-font-sans-serif: 'Inter Var', -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI, Roboto, Helvetica Neue, sans-serif;
+      }
+      body {
+      	font-feature-settings: "cv03", "cv04", "cv11";
+      }
+    </style>
   </head>
-
-  <body>
-    <!-- Layout wrapper -->
-    <div class="layout-wrapper layout-navbar-full layout-horizontal layout-without-menu">
-      <div class="layout-container">
-        <!-- Navbar -->
-
-        <nav class="layout-navbar navbar navbar-expand-xl align-items-center bg-navbar-theme" id="layout-navbar">
-          <div class="container-xxl">
-            <div class="navbar-brand app-brand demo d-none d-xl-flex py-0 me-4">
-              <a href="<?= base_url('admin/dashboard') ?>" class="app-brand-link gap-2">
-                <img src="<?= base_url('assets/img/logo.svg') ?>" alt="logo" style="width: 140px;">
-              </a>
-
-              <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-xl-none">
-                <i class="mdi mdi-close align-middle"></i>
-              </a>
+  <body >
+    <script src="<?= base_url('dist/js/demo-theme.min.js?1684106062') ?>"></script>
+    <div class="page">
+      <!-- Navbar -->
+      <header class="navbar navbar-expand-md d-print-none" >
+        <div class="container-xl">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <h1 class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
+            <a href=".">
+              <img src="<?= base_url('static/logo.svg') ?>" width="110" height="32" alt="Tabler" class="navbar-brand-image">
+            </a>
+          </h1>
+          <div class="navbar-nav flex-row order-md-last">
+            <div class="nav-item d-none d-md-flex me-3">
+              
             </div>
-
-            <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
-              <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
-                <i class="mdi mdi-menu mdi-24px"></i>
+            <div class="d-none d-md-flex">
+              <a href="?theme=dark" class="nav-link px-0 hide-theme-dark" title="Enable dark mode" data-bs-toggle="tooltip"
+		   data-bs-placement="bottom">
+                <!-- Download SVG icon from http://tabler-icons.io/i/moon -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" /></svg>
               </a>
-            </div>
-
-            <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
-              <div class="navbar-nav align-items-center">
-                <a class="nav-link style-switcher-toggle hide-arrow" href="javascript:void(0);">
-                  <i class="mdi mdi-24px"></i>
+              <a href="?theme=light" class="nav-link px-0 hide-theme-light" title="Enable light mode" data-bs-toggle="tooltip"
+		   data-bs-placement="bottom">
+                <!-- Download SVG icon from http://tabler-icons.io/i/sun -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" /><path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" /></svg>
+              </a>
+              <div class="nav-item dropdown d-none d-md-flex me-3">
+                <a href="#" class="nav-link px-0" data-bs-toggle="dropdown" tabindex="-1" aria-label="Show notifications">
+                  <!-- Download SVG icon from http://tabler-icons.io/i/bell -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 5a2 2 0 1 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" /><path d="M9 17v1a3 3 0 0 0 6 0v-1" /></svg>
+                  <span class="badge bg-red"></span>
                 </a>
-              </div>
-
-              <ul class="navbar-nav flex-row align-items-center ms-auto">
-
-                <!-- User -->
-                <li class="nav-item navbar-dropdown dropdown-user dropdown">
-                  <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
-                    <div class="avatar avatar-online">
-                      <img src="<?= base_url('assets/img/avatars/20.png') ?>" alt class="w-px-40 h-auto rounded-circle" />
+                <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-end dropdown-menu-card">
+                  <div class="card">
+                    <div class="card-header">
+                      <h3 class="card-title">Alertas</h3>
                     </div>
-                  </a>
-                  <ul class="dropdown-menu dropdown-menu-end">
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        <div class="d-flex">
-                          <div class="flex-shrink-0 me-3">
-                            <div class="avatar avatar-online">
-                              <img src="<?= base_url('assets/img/avatars/20.png') ?>" alt class="w-px-40 h-auto rounded-circle" />
+                    <div class="list-group list-group-flush list-group-hoverable">
+                      <div class="list-group-item">
+                        <div class="row align-items-center">
+                          <div class="col-auto"><span class="status-dot status-dot-animated bg-red d-block"></span></div>
+                          <div class="col text-truncate">
+                            <a href="#" class="text-body d-block">Muestra 202309001</a>
+                            <div class="d-block text-muted text-truncate mt-n1">
+                              Muestra pronto a vences
                             </div>
                           </div>
-                          <div class="flex-grow-1">
-                            <span class="fw-semibold d-block">Jenni Andrino</span>
-                            <small class="text-muted">Administradora</small>
+                          <div class="col-auto">
+                            <a href="#" class="list-group-item-actions">
+                              <!-- Download SVG icon from http://tabler-icons.io/i/star -->
+                              <svg xmlns="http://www.w3.org/2000/svg" class="icon text-muted" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" /></svg>
+                            </a>
                           </div>
                         </div>
-                      </a>
-                    </li>
-                    <li>
-                      <div class="dropdown-divider"></div>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        <i class="mdi mdi-account-outline me-2"></i>
-                        <span class="align-middle">Mi Perfil</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        <i class="mdi mdi-cog-outline me-2"></i>
-                        <span class="align-middle">Configuración</span>
-                      </a>
-                    </li>
-                    <li>
-                      <div class="dropdown-divider"></div>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="<?= base_url('admin/dashboard/logout') ?>">
-                        <i class="mdi mdi-power me-2"></i>
-                        <span class="align-middle">Cerrar Sesión</span>
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-                <!--/ User -->
-              </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="nav-item dropdown">
+              <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown" aria-label="Open user menu">
+                <span class="avatar avatar-sm" style="background-image: url(<?= base_url('static/20.png') ?>)"></span>
+                <div class="d-none d-xl-block ps-2">
+                  <div>Jenni Andrino</div>
+                  <div class="mt-1 small text-muted">Admin</div>
+                </div>
+              </a>
+              <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                <a href="<?= base_url() ?>" class="dropdown-item">Perfil</a>
+                <a href="<?= base_url() ?>" class="dropdown-item">Cerrar sesión</a>
+              </div>
             </div>
           </div>
-        </nav>
-
-        <!-- / Navbar -->
-
-        <!-- Layout container -->
-        <div class="layout-page">
-          <!-- Content wrapper -->
-          <div class="content-wrapper">
-            <!-- Menu -->
-            <aside id="layout-menu" class="layout-menu-horizontal menu-horizontal menu bg-menu-theme flex-grow-0">
-              <div class="container-xxl d-flex h-100">
-                <ul class="menu-inner py-1">
-                  <!-- Page -->
-                  <li class="menu-item <?= ($titulo == 'Inicio')?'active':'' ?>">
-                    <a href="<?= base_url('admin/dashboard') ?>" class="menu-link">
-                      <i class="menu-icon tf-icons mdi mdi-home-outline"></i>
-                      <div data-i18n="Page 1">Inicio</div>
-                    </a>
-                  </li>
-                  <li class="menu-item <?= ($titulo == 'Nuevo Donante')?'active':'' ?>">
-                    <a href="<?= base_url('admin/donantes/donante/nuevo_donante') ?>" class="menu-link">
-                      <i class="menu-icon tf-icons mdi mdi-plus-outline"></i>
-                      <div data-i18n="Page 2">Nuevo Donante</div>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </aside>
-            <!-- / Menu -->
+        </div>
+      </header>
+      <header class="navbar-expand-md">
+        <div class="collapse navbar-collapse" id="navbar-menu">
+          <div class="navbar">
+            <div class="container-xl">
+              <ul class="navbar-nav">
+                <li class="nav-item <?= ($titulo == 'Inicio')?'active':'' ?>">
+                  <a class="nav-link" href="<?= base_url('admin/dashboard') ?>" >
+                    <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/home -->
+                      <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l-2 0l9 -9l9 9l-2 0" /><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" /><path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" /></svg>
+                    </span>
+                    <span class="nav-link-title">
+                      Inicio
+                    </span>
+                  </a>
+                </li>
+                <li class="nav-item <?= ($titulo == 'Donadores')?'active':'' ?>">
+                  <a class="nav-link" href="<?= base_url('admin/donadores/lista-donadores') ?>" >
+                    <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/home -->
+                      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-droplet-plus" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M18.602 12.004a6.66 6.66 0 0 0 -.538 -1.127l-4.89 -7.26c-.42 -.625 -1.287 -.803 -1.936 -.397a1.376 1.376 0 0 0 -.41 .397l-4.893 7.26c-1.695 2.838 -1.035 6.441 1.567 8.546a7.16 7.16 0 0 0 5.033 1.56" />
+                        <path d="M16 19h6" />
+                        <path d="M19 16v6" />
+                      </svg>
+                    </span>
+                    <span class="nav-link-title">
+                      Donadores
+                    </span>
+                  </a>
+                </li>
+              </ul>
+              
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="page-wrapper">
+        <!-- Page body -->
