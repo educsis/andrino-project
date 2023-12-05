@@ -9,11 +9,11 @@
                     <label class="form-label">Tipo de donación</label>
                     <div>
                         <label class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="tipo_donacion" value="sangre" checked>
+                            <input class="form-check-input" type="radio" name="tipo_donacion" value="Sangle Completa" checked>
                             <span class="form-check-label">Sangre Completa</span>
                         </label>
                         <label class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="tipo_donacion" value="aferesis">
+                            <input class="form-check-input" type="radio" name="tipo_donacion" value="Aferesis">
                             <span class="form-check-label">Aferesis</span>
                         </label>
                     </div>
@@ -32,11 +32,11 @@
                     <label class="form-label">Género</label>
                     <div>
                         <label class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="genero" value="M" checked>
+                            <input class="form-check-input" type="radio" name="genero" value="Masculino" checked>
                             <span class="form-check-label">Masculino</span>
                         </label>
                         <label class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="genero" value="F">
+                            <input class="form-check-input" type="radio" name="genero" value="Femenino">
                             <span class="form-check-label">Femenino</span>
                         </label>
                     </div>
@@ -45,15 +45,15 @@
                     <label class="form-label">Grupo Étnico</label>
                     <div>
                         <label class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="etnico" value="mestizo" checked>
+                            <input class="form-check-input" type="radio" name="etnico" value="Mestizo" checked>
                             <span class="form-check-label">Mestizo</span>
                         </label>
                         <label class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="etnico" value="maya">
+                            <input class="form-check-input" type="radio" name="etnico" value="Maya">
                             <span class="form-check-label">Maya</span>
                         </label>
                         <label class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="etnico" value="garifuna">
+                            <input class="form-check-input" type="radio" name="etnico" value="Garifuna">
                             <span class="form-check-label">Garifuna</span>
                         </label>
                         <label class="form-check form-check-inline">
@@ -61,11 +61,11 @@
                             <span class="form-check-label">Xinca</span>
                         </label>
                         <label class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="etnico" value="otros">
+                            <input class="form-check-input" type="radio" name="etnico" value="Otros">
                             <span class="form-check-label">Otros / Extranjeros</span>
                         </label>
                         <label class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="etnico" value="noindica">
+                            <input class="form-check-input" type="radio" name="etnico" value="No indica">
                             <span class="form-check-label">No Indica</span>
                         </label>
                     </div>
@@ -104,19 +104,19 @@
                     <label class="form-label">Estado Civil</label>
                     <div>
                         <label class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="civil" value="soltero" checked>
+                            <input class="form-check-input" type="radio" name="civil" value="Soltero" checked>
                             <span class="form-check-label">Soltero</span>
                         </label>
                         <label class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="civil" value="casado">
+                            <input class="form-check-input" type="radio" name="civil" value="Casado">
                             <span class="form-check-label">Casado</span>
                         </label>
                         <label class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="civil" value="unido">
+                            <input class="form-check-input" type="radio" name="civil" value="Unido">
                             <span class="form-check-label">Unido</span>
                         </label>
                         <label class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="civil" value="divorciado">
+                            <input class="form-check-input" type="radio" name="civil" value="Divorciado">
                             <span class="form-check-label">Divorciado</span>
                         </label>
                     </div>
@@ -125,14 +125,14 @@
                     <label class="form-label">Tipo de Sangre</label>
                         <select class="form-select" name="tiposangre" autocomplete="off" required="true">
                             <option selected>Seleccionar</option>
-                            <option value="1">A+</option>
-                            <option value="2">A-</option>
-                            <option value="3">B+</option>
-                            <option value="4">B-</option>
-                            <option value="5">AB+</option>
-                            <option value="5">AB-</option>
-                            <option value="5">O+</option>
-                            <option value="5">O-</option>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
                         </select>
                 </div>
                 <div class="col-6">

@@ -1,3 +1,6 @@
+<?php
+    $donadores = $this->model->get_donadores(3);
+?>
 <div class="col-12">
     <div class="card">
         <div class="card-header">
@@ -12,67 +15,53 @@
                     <th>Fecha</th>
                     <th>Tipo</th>
                     <th>Donador</th>
+                    <th>Teléfono</th>
                     <th>Sangre</th>
                     <th class="w-1"></th>
                 </tr>
                 </thead>
                 <tbody>
+                    <?php
+                    foreach($donadores as $d){
+                        $id = str_pad($d['iddonadores'], 8, '0', STR_PAD_LEFT);
+                    ?>
                     <tr>
-                        <td class="text-center" style="width: 130px;">000001</td>
+                        <td class="text-center" style="width: 130px;"><?= $id ?></td>
                         <td class="text-muted text-center" style="width: 120px;">
-                            <?= date('d-m-Y') ?>
+                            <?= date('d-m-Y', strtotime($d['created_at'])) ?>
                         </td>
-                        <td class="text-muted" style="width: 150px;">Sangre Completa</td>
-                        <td class="text-muted" >Fulano de Tal</td>
-                        <td class="text-muted" style="width: 70px;">B+</td>
+                        <td class="text-muted" style="width: 150px;"><?= $d['tipo_donacion'] ?></td>
+                        <td class="text-muted" ><?= $d['nombre'] ?></td>
+                        <td class="text-muted" style="width: 150px;"><?= $d['telefono'] ?></td>
+                        <td class="text-muted" style="width: 70px;"><?= $d['tiposangre'] ?></td>
                         <td class="text-center" style="width: 110px;">
-                            <a href="#" class="btn btn-success btn-icon btn-sm">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                    <path d="M5 12l5 5l10 -10" />
-                                </svg>
+                            <a href="#" class="btn btn-default btn-icon btn-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-eye" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" /></svg>
                             </a>
-                            <a href="#" class="btn btn-danger btn-icon btn-sm">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                    <path d="M4 7l16 0" />
-                                    <path d="M10 11l0 6" />
-                                    <path d="M14 11l0 6" />
-                                    <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
-                                    <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
-                                </svg>
+                            <a href="#" class="btn btn-yellow btn-icon btn-sm comentarioBtn" data-bs-toggle="modal" data-bs-target="#modal-comentario" data-comentario="<?= $d['comentarios'] ?>">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-message" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 9h8" /><path d="M8 13h6" /><path d="M18 4a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-5l-5 3v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3h12z" /></svg>
                             </a>
                         </td>
                     </tr>
-                    <tr>
-                        <td class="text-center" style="width: 130px;">000002</td>
-                        <td class="text-muted text-center" style="width: 120px;">
-                            <?= date('d-m-Y') ?>
-                        </td>
-                        <td class="text-muted" style="width: 150px;">Aferesis</td>
-                        <td class="text-muted">Mengano de Tal</td>
-                        <td class="text-muted" style="width: 70px;">B+</td>
-                        <td class="text-center" style="width: 110px;">
-                            <a href="#" class="btn btn-green btn-icon btn-sm">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                    <path d="M5 12l5 5l10 -10" />
-                                </svg>
-                            </a>
-                            <a href="#" class="btn btn-red btn-icon btn-sm">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                    <path d="M4 7l16 0" />
-                                    <path d="M10 11l0 6" />
-                                    <path d="M14 11l0 6" />
-                                    <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
-                                    <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
-                                </svg>
-                            </a>
-                        </td>
-                    </tr>
+                    <?php
+                    }
+                    ?>
                 </tbody>
             </table>
+        </div>
+    </div>
+</div>
+
+<div class="modal modal-blur fade" id="modal-comentario" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+    <div class="modal-content">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-status bg-success"></div>
+            <div class="modal-body text-center py-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-message" width="54" height="54" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 9h8" /><path d="M8 13h6" /><path d="M18 4a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-5l-5 3v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3h12z" /></svg>
+                <h3>Comentario</h3>
+                <div class="text-muted" id="comentarioText"></div>
+            </div>
         </div>
     </div>
 </div>

@@ -21,9 +21,35 @@ class Nuevo_donador extends CI_Controller {
         $dh['titulo'] = 'Donadores';
 
 		if(isset($_POST['guardar'])){
-			echo "<pre>";
-			print_r($_POST);
-			die();
+
+			$now = date('Y-m-d H:i:s');
+			extract($_POST);
+
+			$array = array(
+				'tipo_donacion'	=>	$tipo_donacion,
+				'pasaporte'		=>	$pasaporte,
+				'nombre'		=>	$nombre,
+				'genero'		=>	$genero,
+				'etnico'		=>	$etnico,
+				'prof'			=>	$prof,
+				'comunidad'		=>	$comunidad,
+				'dob'			=>	$dob,
+				'nacionalidad'	=>	$nacionalidad,
+				'direccion'		=>	$direccion,
+				'telefono'		=>	$telefono,
+				'civil'			=>	$civil,
+				'tiposangre'	=>	$tiposangre,
+				'peso'			=>	$peso,
+				'temp'			=>	$temp,
+				'presion'		=>	$presion,
+				'pulso'			=>	$pulso,
+				'hemoglobina'	=>	$hemoglobina,
+				'created_at'	=>	$now
+			);
+
+			$this->db->insert('donadores', $array);
+
+			redirect(base_url('admin/donadores/lista_donadores'));
 		}
 
         $this->load->view('admin/header_view', $dh);

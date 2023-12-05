@@ -20,6 +20,19 @@ class Lista_donadores extends CI_Controller {
 	{
         $dh['titulo'] = 'Donadores';
 
+		if(isset($_POST['rechazar'])){
+			$razon = $_POST['razon'];
+			$idrechazado = $_POST['idrechazado'];
+
+			$array = array(
+				'comentarios'	=>	$razon,
+				'status'		=>	3
+			);
+
+			$this->db->where('iddonadores', $idrechazado);
+			$this->db->update('donadores', $array);
+		}
+
         $this->load->view('admin/header_view', $dh);
 		$this->load->view('admin/donadores/lista_donadores_view');
         $this->load->view('admin/footer_view', $dh);

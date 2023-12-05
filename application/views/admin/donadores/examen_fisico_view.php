@@ -28,6 +28,7 @@
                 <div class="col-2" style="text-align: right;">
                     <label class="form-label text-white">a</label>
                     <button type"submit" name="guardar" class="btn btn-success">Guardar</button>
+                    <a href="<?= base_url('admin/donadores/lista-donadores') ?>" class="btn btn-white">Cancelar</a>
                 </div>
             </div>
         </div>

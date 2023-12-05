@@ -18,11 +18,12 @@
     </div>
      <!-- Libs JS -->
     <script src="<?= base_url('dist/libs/nouislider/dist/nouislider.min.js?1684106062') ?>" defer></script>
-    <script src="<?= base_url('dist/libs/litepicker/dist/litepicker.js?1684106062') ?>" defer></script>
+    <!-- <script src="<?= base_url('dist/libs/litepicker/dist/litepicker.js?1684106062') ?>" defer></script> -->
     <script src="<?= base_url('dist/libs/tom-select/dist/js/tom-select.base.min.js?1684106062') ?>" defer></script>
     <!-- Tabler Core -->
     <script src="<?= base_url('dist/js/tabler.min.js?1684106062') ?>" defer></script>
     <script src="<?= base_url('dist/js/demo.min.js?1684106062') ?>" defer></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script>
       // @formatter:off
       document.addEventListener("DOMContentLoaded", function () {
@@ -37,6 +38,16 @@
                 }));
               });
       // @formatter:on
+
+      $(document).on("click", ".rechazarBtn", function () {
+          var userID = $(this).data('id');
+          $(".modal-body #rechazadoID").val( userID );
+      });
+
+      $(document).on("click", ".comentarioBtn", function () {
+          var comentario = $(this).data('comentario');
+          $(".modal-body #comentarioText").html( comentario );
+      });
   </script>
   </body>
 </html>
