@@ -6,23 +6,23 @@
         <div class="card-body">
             <div class="row mb-4">
                 <div class="col-2">
-                    <label class="form-label">Peso Lb.</label>
+                    <label class="form-label required">Peso Lb.</label>
                     <input type="text" class="form-control" name="peso" autocomplete="off" required="true">
                 </div>
                 <div class="col-2">
-                    <label class="form-label">Temperatura °C</label>
+                    <label class="form-label required">Temperatura °C</label>
                     <input type="text" class="form-control" name="temp" autocomplete="off" required="true">
                 </div>
                 <div class="col-2">
-                    <label class="form-label">Presión Arterial</label>
+                    <label class="form-label required">Presión Arterial</label>
                     <input type="text" class="form-control" name="presion" autocomplete="off" required="true">
                 </div>
                 <div class="col-2">
-                    <label class="form-label">Pulso</label>
+                    <label class="form-label required">Pulso</label>
                     <input type="text" class="form-control" name="pulso" autocomplete="off" required="true">
                 </div>
                 <div class="col-2">
-                    <label class="form-label">Hemoglobina</label>
+                    <label class="form-label required">Hemoglobina</label>
                     <input type="text" class="form-control" name="hemoglobina" autocomplete="off" required="true">
                 </div>
                 <div class="col-2" style="text-align: right;">

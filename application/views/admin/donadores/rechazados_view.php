@@ -14,6 +14,7 @@
                     <th>No.</th>
                     <th>Fecha</th>
                     <th>Tipo</th>
+                    <th>Edad</th>
                     <th>Donador</th>
                     <th>Teléfono</th>
                     <th>Sangre</th>
@@ -23,16 +24,24 @@
                 <tbody>
                     <?php
                     foreach($donadores as $d){
+                        $birthDate = date('m/d/Y', strtotime($d['dob']));
+                        $birthDate = explode("/", $birthDate);
+                        //get age from date or birthdate
+                        $edad = (date("md", date("U", mktime(0, 0, 0, $birthDate[0], $birthDate[1], $birthDate[2]))) > date("md")
+                            ? ((date("Y") - $birthDate[2]) - 1)
+                            : (date("Y") - $birthDate[2]));
+
                         $id = str_pad($d['iddonadores'], 8, '0', STR_PAD_LEFT);
                     ?>
                     <tr>
-                        <td class="text-center" style="width: 130px;"><?= $id ?></td>
+                        <td class="text-center" style="width: 110px;"><?= $id ?></td>
                         <td class="text-muted text-center" style="width: 120px;">
                             <?= date('d-m-Y', strtotime($d['created_at'])) ?>
                         </td>
                         <td class="text-muted" style="width: 150px;"><?= $d['tipo_donacion'] ?></td>
+                        <td class="text-muted" style="width: 50px; text-align: center;"><?= $edad ?></td>
                         <td class="text-muted" ><?= $d['nombre'] ?></td>
-                        <td class="text-muted" style="width: 150px;"><?= $d['telefono'] ?></td>
+                        <td class="text-muted" style="width: 130px;"><?= $d['telefono'] ?></td>
                         <td class="text-muted" style="width: 70px;"><?= $d['tiposangre'] ?></td>
                         <td class="text-center" style="width: 110px;">
                             <a href="#" class="btn btn-default btn-icon btn-sm">

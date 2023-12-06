@@ -12,7 +12,7 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <link rel="icon" href="<?= base_url('static/favicon/favicon.io') ?>">
+    <link rel="icon" href="<?= base_url('static/favicon/favicon.ico') ?>">
     <title>Banco de Sangre Andrino .::. <?= $titulo ?></title>
     <!-- CSS files -->
     <link href="<?= base_url('dist/css/tabler.min.css?1684106062') ?>" rel="stylesheet"/>
@@ -30,7 +30,7 @@
       }
     </style>
   </head>
-  <body >
+  <body>
     <script src="<?= base_url('dist/js/demo-theme.min.js?1684106062') ?>"></script>
     <div class="page">
       <!-- Navbar -->
@@ -103,7 +103,7 @@
               </a>
               <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                 <a href="<?= base_url() ?>" class="dropdown-item">Perfil</a>
-                <a href="<?= base_url() ?>" class="dropdown-item">Cerrar sesión</a>
+                <a href="<?= base_url('admin/dashboard/logout') ?>" class="dropdown-item">Cerrar sesión</a>
               </div>
             </div>
           </div>

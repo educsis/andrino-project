@@ -26,13 +26,13 @@
                         $id = str_pad($d['iddonadores'], 8, '0', STR_PAD_LEFT);
                     ?>
                     <tr>
-                        <td class="text-center" style="width: 130px;"><?= $id ?></td>
+                        <td class="text-center" style="width: 110px;"><?= $id ?></td>
                         <td class="text-muted text-center" style="width: 120px;">
                             <?= date('d-m-Y', strtotime($d['created_at'])) ?>
                         </td>
                         <td class="text-muted" style="width: 150px;"><?= $d['tipo_donacion'] ?></td>
                         <td class="text-muted" ><?= $d['nombre'] ?></td>
-                        <td class="text-muted" style="width: 150px;"><?= $d['telefono'] ?></td>
+                        <td class="text-muted" style="width: 130px;"><?= $d['telefono'] ?></td>
                         <td class="text-muted" style="width: 70px;"><?= $d['tiposangre'] ?></td>
                         <td class="text-center" style="width: 110px;">
                             <a href="#" class="btn btn-success btn-icon btn-sm">

@@ -23,7 +23,14 @@ class Nuevo_donador extends CI_Controller {
 		if(isset($_POST['guardar'])){
 
 			$now = date('Y-m-d H:i:s');
+
+			// echo "<pre>";
+			// print_r($_POST);
+			// die();
+
 			extract($_POST);
+
+			$dob = date('Y-m-d', strtotime($dia . '-' . $mes . '-' . $anio));
 
 			$array = array(
 				'tipo_donacion'	=>	$tipo_donacion,
