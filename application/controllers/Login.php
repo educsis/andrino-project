@@ -12,6 +12,7 @@ class Login extends CI_Controller {
 			// echo $_SESSION['logged'];
 			// print_r($_SESSION);
 			// die('not set');
+			session_destroy();
         	redirect(base_url());
    		}
   	}
