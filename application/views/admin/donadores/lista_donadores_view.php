@@ -21,6 +21,7 @@
     <div class="row row-cards">
       <?= $this->load->view('admin/donadores/pendientes_view', '', TRUE) ?>
       <?= $this->load->view('admin/donadores/aceptados_view', '', TRUE) ?>
+      <?= $this->load->view('admin/donadores/temporal_view', '', TRUE) ?>
       <?= $this->load->view('admin/donadores/rechazados_view', '', TRUE) ?>
     </div>
   </div>

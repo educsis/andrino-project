@@ -1,10 +1,10 @@
 <?php
-    $donadores = $this->model->get_donadores(3);
+    $donadores = $this->model->get_donadores(4);
 ?>
 <div class="col-12">
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title text-red">Diferidos Permanentemente</h3>
+            <h3 class="card-title text-orange">Diferidos Temporalmente</h3>
         </div>
 
         <div class="table-responsive">

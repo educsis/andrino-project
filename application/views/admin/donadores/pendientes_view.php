@@ -4,7 +4,7 @@
 <div class="col-12">
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title text-orange">Donadores Pendientes</h3>
+            <h3 class="card-title text-blue">Donadores Pendientes</h3>
         </div>
 
         <div class="table-responsive">
@@ -43,12 +43,20 @@
                         <td class="text-muted" ><?= $d['nombre'] ?></td>
                         <td class="text-muted" style="width: 130px;"><?= $d['telefono'] ?></td>
                         <td class="text-muted" style="width: 50px;"><?= $d['tiposangre'] ?></td>
-                        <td class="text-center" style="width: 140px;">
+                        <td class="text-center" style="width: 180px;">
                             <a href="#" class="btn btn-success btn-icon btn-sm">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                     <path d="M5 12l5 5l10 -10" />
                                 </svg>
+                            </a>
+                            <a href="#" class="btn btn-warning btn-icon btn-sm temporalBtn" data-id="<?= $d['iddonadores'] ?>" data-bs-toggle="modal" data-bs-target="#modal-temporal">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock-hour-4" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+                                <path d="M12 12l3 2" />
+                                <path d="M12 7v5" />
+                            </svg>
                             </a>
                             <a href="#" class="btn btn-danger btn-icon btn-sm rechazarBtn" data-id="<?= $d['iddonadores'] ?>" data-bs-toggle="modal" data-bs-target="#modal-rechazar">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -78,7 +86,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title text-red">Donador Rechazado</h5>
+                <h5 class="modal-title text-red">Diferido Permanentemente</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form method="POST">
@@ -91,6 +99,42 @@
                 <div class="modal-footer">
                     <button type="button" class="btn me-auto" data-bs-dismiss="modal">Cerrar</button>
                     <button type="submit" name="rechazar" class="btn btn-primary">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal modal-blur fade" id="modal-temporal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-orange">Diferido Temporalmente</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form method="POST">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <textarea class="form-control" name="razon" required="true"></textarea>
+                            <input type="hidden" id="temporalID" name="idtemporal">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="input-icon">
+                                <span class="input-icon-addon"><!-- Download SVG icon from http://tabler-icons.io/i/calendar -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z" /><path d="M16 3v4" /><path d="M8 3v4" /><path d="M4 11h16" /><path d="M11 15h1" /><path d="M12 15v3" /></svg>
+                                </span>
+                                <input class="form-control" name="fecha" placeholder="Selecciona una fecha" id="datepicker-icon-prepend" value="" autocomplete="off" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn me-auto" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="submit" name="temporal" class="btn btn-primary">Guardar</button>
                 </div>
             </form>
         </div>

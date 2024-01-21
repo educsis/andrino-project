@@ -33,6 +33,28 @@ class Lista_donadores extends CI_Controller {
 			$this->db->update('donadores', $array);
 		}
 
+		if(isset($_POST['temporal'])){
+			$razon = $_POST['razon'];
+			$idtemporal = $_POST['idtemporal'];
+			$fecha = $_POST['fecha'];
+			$fecha = date('Y-m-d', strtotime($fecha));
+
+			$array = array(
+				'comentarios'	=>	$razon,
+				'status'		=>	4
+			);
+
+			$this->db->where('iddonadores', $idtemporal);
+			$this->db->update('donadores', $array);
+
+			$array = array(
+				'id_usuario'	=>	$idtemporal,
+				'fecha'			=>	$fecha
+			);
+
+			$this->db->insert('fecha_diferido', $array);
+		}
+
         $this->load->view('admin/header_view', $dh);
 		$this->load->view('admin/donadores/lista_donadores_view');
         $this->load->view('admin/footer_view', $dh);
