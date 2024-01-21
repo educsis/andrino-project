@@ -48,6 +48,11 @@
           $(".modal-body #temporalID").val( userID );
       });
 
+      $(document).on("click", ".aceptadoBtn", function () {
+          var userID = $(this).data('id');
+          $(".modal-body #aceptadoID").val( userID );
+      });
+
       $(document).on("click", ".comentarioBtn", function () {
           var comentario = $(this).data('comentario');
           $(".modal-body #comentarioText").html( comentario );

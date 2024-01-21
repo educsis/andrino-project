@@ -31,10 +31,10 @@
                             ? ((date("Y") - $birthDate[2]) - 1)
                             : (date("Y") - $birthDate[2]));
 
-                        $id = str_pad($d['iddonadores'], 8, '0', STR_PAD_LEFT);
+                        $id = str_pad($d['iddonadores'], 4, '0', STR_PAD_LEFT);
                     ?>
                     <tr>
-                        <td class="text-center" style="width: 110px;"><?= $id ?></td>
+                        <td class="text-center" style="width: 140px;"><?= $id . '-' . date('m-y', strtotime($d['created_at'])) ?></td>
                         <td class="text-muted text-center" style="width: 120px;">
                             <?= date('d-m-Y', strtotime($d['created_at'])) ?>
                         </td>

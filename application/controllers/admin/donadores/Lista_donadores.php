@@ -55,6 +55,26 @@ class Lista_donadores extends CI_Controller {
 			$this->db->insert('fecha_diferido', $array);
 		}
 
+		if(isset($_POST['aceptado'])){
+			$idaceptado = $_POST['idaceptado'];
+			$horainicio = $_POST['horainicio'];
+			$horafin = $_POST['horafin'];
+			$brazo = $_POST['brazo'];
+			$cantidad = $_POST['cantidad'];
+
+			echo "<pre>";
+			print_r($_POST);
+			die();
+
+			$array = array(
+				'horainicio'	=>	$razon,
+				'status'		=>	3
+			);
+
+			$this->db->where('iddonadores', $idrechazado);
+			$this->db->update('donadores', $array);
+		}
+
         $this->load->view('admin/header_view', $dh);
 		$this->load->view('admin/donadores/lista_donadores_view');
         $this->load->view('admin/footer_view', $dh);

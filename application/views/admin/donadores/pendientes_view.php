@@ -31,10 +31,10 @@
                             ? ((date("Y") - $birthDate[2]) - 1)
                             : (date("Y") - $birthDate[2]));
 
-                        $id = str_pad($d['iddonadores'], 8, '0', STR_PAD_LEFT);
+                        $id = str_pad($d['iddonadores'], 4, '0', STR_PAD_LEFT);
                     ?>
                     <tr>
-                        <td class="text-center" style="width: 110px;"><?= $id ?></td>
+                        <td class="text-center" style="width: 140px;"><?= $id . '-' . date('m-y', strtotime($d['created_at'])) ?></td>
                         <td class="text-muted text-center" style="width: 120px;">
                             <?= date('d-m-Y', strtotime($d['created_at'])) ?>
                         </td>
@@ -44,7 +44,7 @@
                         <td class="text-muted" style="width: 130px;"><?= $d['telefono'] ?></td>
                         <td class="text-muted" style="width: 50px;"><?= $d['tiposangre'] ?></td>
                         <td class="text-center" style="width: 180px;">
-                            <a href="#" class="btn btn-success btn-icon btn-sm">
+                            <a href="#" class="btn btn-success btn-icon btn-sm aceptadoBtn" data-id="<?= $d['iddonadores'] ?>" data-bs-toggle="modal" data-bs-target="#modal-aceptado">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                     <path d="M5 12l5 5l10 -10" />
@@ -135,6 +135,58 @@
                 <div class="modal-footer">
                     <button type="button" class="btn me-auto" data-bs-dismiss="modal">Cerrar</button>
                     <button type="submit" name="temporal" class="btn btn-primary">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal modal-blur fade" id="modal-aceptado" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-green">Flebotomía</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form method="POST">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label>Hora inicio</label>
+                            <input type="time" class="form-control" name="horainicio">
+                            <input type="hidden" id="aceptadoID" name="idaceptado">
+                        </div>
+                        <div class="col-md-3">
+                            <label>Hora fin</label>
+                            <input type="time" class="form-control" name="horafin">
+                        </div>
+                        <div class="col-md-6">
+                            <label>Brazo donde se realizó</label>
+                            <select name="brazo" class="form-select">
+                                <option value="derecho" selected="">Derecho</option>
+                                <option value="izquierdo" selected="">Izquierdo</option>
+                            </select>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label>Cantidad Ml.</label>
+                            <input type="text" class="form-control" name="cantidad" autocomplete="off">
+                        </div>
+                        <div class="col-md-4">
+                            <label>Tipo bolsa</label>
+                            <input type="text" class="form-control" name="tipobolsa" autocomplete="off">
+                        </div>
+                        <div class="col-md-5">
+                            <label>Marca</label>
+                            <input type="text" class="form-control" name="marca" autocomplete="off">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn me-auto" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="submit" name="aceptado" class="btn btn-primary">Guardar</button>
                 </div>
             </form>
         </div>
